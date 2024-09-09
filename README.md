@@ -69,7 +69,6 @@ filer:unset_source_dir().
 # TODO
 
 - check is file was sent successfully
-- send file chunked `(sendfile(RawFile, Socket, Offset, Bytes, Opts))`
 - set_target_dir
 - cover test
 - performance test of writing/sending files
