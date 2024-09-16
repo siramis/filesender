@@ -1,13 +1,4 @@
-%%%-------------------------------------------------------------------
-%%% @author rsibiev
-%%% @copyright (C) 2024, <COMPANY>
-%%% @doc
-%%%
-%%% @end
-%%% Created : 29. Jul 2024 15:03
-%%%-------------------------------------------------------------------
 -module(file_utils_tests).
--author("rsibiev").
 
 -include_lib("eunit/include/eunit.hrl").
 

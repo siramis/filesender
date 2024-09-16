@@ -2,13 +2,15 @@
 %%% @doc File utils
 %%%-------------------------------------------------------------------
 -module(file_utils).
--author("rsibiev").
 
 -export([lookup_files/2, get_dirs_tree/2, create_full_path/3, read_file_content_into_list/1]).
 -export([get_ignore_files/2, save_file/2]).
 
-%% TODO remove this hardcoded
--define(TARGET_DIR, "/tmp/2").
+%% Setting up target dir in sys.config
+-define(TARGET_DIR, case application:get_env(file_sender, target_dir) of
+                      {ok, Dir} -> Dir;
+                      _ -> "/tmp/somedir"
+                    end).
 
 -spec lookup_files(Dir :: string(), IgnorePath :: string()) -> tuple().
 lookup_files(Dir, IgnorePath) ->

@@ -23,7 +23,7 @@ Starting server node:
 
 ```shell
 cd _build/default/lib/file_sender/ebin
-erl -sname server -setcookie 'MY_FANTASTIC_COOKIE'
+erl -sname server -setcookie 'MY_FANTASTIC_COOKIE' -config ../../../../../config/sys
 application:ensure_started(file_sender).
 ```
 
@@ -31,7 +31,7 @@ On the client node:
 
 ```shell
 cd _build/default/lib/file_sender/ebin
-erl -sname client -setcookie 'MY_FANTASTIC_COOKIE'
+erl -sname server -setcookie 'MY_FANTASTIC_COOKIE' -config ../../../../../config/sys
 net_kernel:connect_node(server@myhost).
 application:ensure_started(file_sender).
 ```
@@ -69,7 +69,6 @@ filer:unset_source_dir().
 # TODO
 
 - check is file was sent successfully
-- set_target_dir
 - cover test
 - performance test of writing/sending files
 - separate state for nodes: source dirs, files and so on
@@ -78,3 +77,4 @@ filer:unset_source_dir().
 - termination of the app
 - registering nodes
 - connection setting (port number) should be set up during init
+- dialyzer
